@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:12:12 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 17:38:24 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:05:24 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int main(int argc, char **argv)
 	else if(argc == 3)
 	{
 		fill_dict(&dict, argv[2]);
+		ft_putstr(1,"\n\n");
+		print_number(&dict, argv[1]);
 	}
 	else
 	{

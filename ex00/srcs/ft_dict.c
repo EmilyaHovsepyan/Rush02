@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 16:22:28 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 17:38:28 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:04:17 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,20 +156,20 @@ void	fill_dict(struct s_dict *dict, char *file_path)
 	i[0] = '0' - 1;
 	i[1] = 0;
 	while (++i[0] <= '9')
-		set_number_name(dict, "srcs/numbers.dict", i);
+		set_number_name(dict, file_path, i);
 
 	ft_putstr(1,"\n");
 	i[0] = '1';
 	i[1] = '0' - 1;
 	i[2] = 0;
 	while (++i[1] <= '9')
-		set_number_name(dict, "srcs/numbers.dict", i);
+		set_number_name(dict, file_path, i);
 	ft_putstr(1,"\n");
 	i[1] = '0';
 	while (++i[0] <= '9')
-		set_number_name(dict, "srcs/numbers.dict", i);
+		set_number_name(dict, file_path, i);
 	ft_putstr(1, "\n");
-	set_number_name(dict, "srcs/numbers.dict", "100");
+	set_number_name(dict, file_path, "100");
 	i[0] = '1';
 	j = 0;
 	while (++j < 12)
