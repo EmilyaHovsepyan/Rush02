@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:23:42 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/14 18:27:06 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:05:39 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ struct s_dict
 	char	*miavor[10];
 	char	*tasnavor1[10];
 	char	*tasnavor[10];
-	char	*haryuravor_and_more[10];
+	char	*haryuravor_and_more[13];
 };
 
 void	ft_putstr(int ft, char *str);

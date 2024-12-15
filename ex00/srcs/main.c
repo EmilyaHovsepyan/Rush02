@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:12:12 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/14 17:27:56 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 15:56:52 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,20 @@ int ft_is_number(char *str)
 	return (1);
 }
 
+void	init_dict(struct s_dict *dict)
+{
+	int	i;
+
+	i = 0;
+	while (i < 10)
+	{
+		dict->miavor[i] = 0;
+		dict->tasnavor[i] = 0;
+		dict->tasnavor1[i] = 0;
+		dict->haryuravor_and_more[i] = 0;
+		i++;
+	}
+}
 int main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -34,6 +48,7 @@ int main(int argc, char **argv)
 		}
 
 		struct s_dict dict;
+		init_dict(&dict);
 		fill_dict_default(&dict);
 	}
 	else
