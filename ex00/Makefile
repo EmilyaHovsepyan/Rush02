@@ -10,10 +10,10 @@ OBJ		= ${SRC:.c=.o}
 NAME	= rush-02
 
 .c.o:
-		${CC} -I includes -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -I includes -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
-			$(CC) $(OBJ) -o $(NAME)
+			$(CC) ${CFLAGS} $(OBJ) -o $(NAME)
 
 all:		${NAME}
 

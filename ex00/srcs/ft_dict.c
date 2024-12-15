@@ -6,13 +6,14 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 16:22:28 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 18:31:10 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 19:58:55 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
-#include <stdlib.h>
+#include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 #define BUFFER_SIZE 1024
 
@@ -35,17 +36,16 @@ char	*read_file(char *file_path, char *value, char *buffer)
 	res = 0;
 	fd = open(file_path, O_RDONLY);
 	if (fd == -1)
-		ft_putstr(2, "-Dict Error\n");
+		ft_putstr(2, "Dict Error\n");
 	else
 	{
 		while (read(fd, buffer, BUFFER_SIZE - 1) > 0)
 			res = find_line(buffer, value);
 		if (res == 0)
-			ft_putstr(2, "--Dict Error\n");	
+			ft_putstr(2, "Dict Error\n");	
 	}
 	close(fd);
 
-//	ft_putstr(1, res);
 	return (res);
 }
 
@@ -73,7 +73,7 @@ char *split_word(char *str)
 	}
 	str[i] = 0;
 	if (!res)
-		ft_putstr(2, "---Dict Error\n");
+		ft_putstr(2, "Dict Error\n");
 	return (res);
 }
 
@@ -82,6 +82,8 @@ void	fill_1(struct s_dict *dict, char *nbr, int len, char *tmp)
 	char	**dict_arr;
 	int		index;
 
+	index = 0;
+	dict_arr = 0;
 	if(len == 1)
 	{
 		dict_arr = dict->miavor;
@@ -100,8 +102,6 @@ void	fill_1(struct s_dict *dict, char *nbr, int len, char *tmp)
 	if (dict_arr[nbr[index] - '0'] == 0)
 		free(dict_arr[nbr[index] - '0']);
 	dict_arr[nbr[index] - '0'] = ft_strdup(tmp);
-	ft_putstr(1, dict_arr[nbr[index] - '0']);
-	ft_putstr(1," ");
 }
 
 void	set_number_name(struct s_dict *dict, char *file_path, char *nbr)
@@ -120,15 +120,10 @@ void	set_number_name(struct s_dict *dict, char *file_path, char *nbr)
 		if (len == 3)
 			index = 0;
 		else
-		{
 			index = (len - 1) / 3;
-		}
 		if (dict->haryuravor_and_more[index] == 0)
 			free(dict->haryuravor_and_more[index]);
 		dict->haryuravor_and_more[index] = ft_strdup(tmp);
-		ft_putstr(1, dict->haryuravor_and_more[index]);
-		ft_putstr(1," ");
-
 	}
 }
 
@@ -157,18 +152,14 @@ void	fill_dict(struct s_dict *dict, char *file_path)
 	i[1] = 0;
 	while (++i[0] <= '9')
 		set_number_name(dict, file_path, i);
-
-	ft_putstr(1,"\n");
 	i[0] = '1';
 	i[1] = '0' - 1;
 	i[2] = 0;
 	while (++i[1] <= '9')
 		set_number_name(dict, file_path, i);
-	ft_putstr(1,"\n");
 	i[1] = '0';
 	while (++i[0] <= '9')
 		set_number_name(dict, file_path, i);
-	ft_putstr(1, "\n");
 	set_number_name(dict, file_path, "100");
 	i[0] = '1';
 	i[1] = 0;
