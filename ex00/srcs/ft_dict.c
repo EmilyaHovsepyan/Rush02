@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 16:22:28 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 18:04:17 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:31:10 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,8 +171,9 @@ void	fill_dict(struct s_dict *dict, char *file_path)
 	ft_putstr(1, "\n");
 	set_number_name(dict, file_path, "100");
 	i[0] = '1';
+	i[1] = 0;
 	j = 0;
-	while (++j < 12)
+	while (++j < 13)
 	{
 		add_0(i);
 		set_number_name(dict, file_path, i);

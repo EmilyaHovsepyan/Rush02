@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 17:20:58 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 17:59:12 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:21:28 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,20 @@ void	print_haryuravor(struct s_dict *dict, char *nbr, int len)
 	}
 	print_tasnavor(dict, nbr, len);
 }
+
+void	print_and_more(struct s_dict *dict, char *nbr, int len)
+{
+	int	index;
+
+	if (len > 3)
+	{
+		index = (len -1) / 3;
+		printf("\n%d %d\n", index, (len-1) % 3);
+		ft_putstr(1, dict->haryuravor_and_more[index]);
+	}
+}
+
 void	print_number(struct s_dict *dict, char *nbr)
 {
-	print_haryuravor(dict, nbr, ft_strlen(nbr));
+	print_and_more(dict, nbr, ft_strlen(nbr));
 }
