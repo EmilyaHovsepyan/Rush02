@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:12:12 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 15:56:52 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:38:24 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	init_dict(struct s_dict *dict)
 }
 int main(int argc, char **argv)
 {
+	struct s_dict dict;
+	init_dict(&dict);
+		
 	if (argc == 2)
 	{
 		if (!ft_is_number(argv[1]))
@@ -46,10 +49,13 @@ int main(int argc, char **argv)
 			ft_putstr(2,"Error\n");
 			return (1);
 		}
-
-		struct s_dict dict;
-		init_dict(&dict);
-		fill_dict_default(&dict);
+		fill_dict(&dict, "srcs/numbers.dict");
+		ft_putstr(1,"\n\n");
+		print_number(&dict, argv[1]);
+	}
+	else if(argc == 3)
+	{
+		fill_dict(&dict, argv[2]);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 16:22:28 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 17:03:18 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 17:38:28 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void	fill_1(struct s_dict *dict, char *nbr, int len, char *tmp)
 	ft_putstr(1, dict_arr[nbr[index] - '0']);
 	ft_putstr(1," ");
 }
+
 void	set_number_name(struct s_dict *dict, char *file_path, char *nbr)
 {
 	char	*tmp;
@@ -147,7 +148,7 @@ void	add_0(char *arr)
 	*arr = 0;
 }
 
-void	fill_dict_default(struct s_dict *dict)
+void	fill_dict(struct s_dict *dict, char *file_path)
 {
 	char	i[38];
 	int		j;
@@ -174,6 +175,6 @@ void	fill_dict_default(struct s_dict *dict)
 	while (++j < 12)
 	{
 		add_0(i);
-		set_number_name(dict, "srcs/numbers.dict", i);
+		set_number_name(dict, file_path, i);
 	}
 }
