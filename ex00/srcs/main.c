@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:12:12 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 19:57:49 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 20:16:55 by pamalkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,13 @@ int main(int argc, char **argv)
 		}
 		fill_dict(&dict, "srcs/numbers.dict");
 		print_number(&dict, argv[1]);
+		ft_putstr(1, "\n");
 	}
 	else if(argc == 3)
 	{
 		fill_dict(&dict, argv[2]);
 		print_number(&dict, argv[1]);
+		ft_putstr(1, "\n");
 	}
 	else
 	{
