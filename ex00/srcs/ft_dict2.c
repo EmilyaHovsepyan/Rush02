@@ -6,7 +6,7 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 20:09:24 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 20:11:40 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 21:16:08 by ehovsepy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,21 @@
 
 #define BUFFER_SIZE 1024
 
-char *find_line(char *buffer, char *value)
+char	*find_line(char *buffer, char *value)
 {
-	char *res;
-	if ((res = ft_strstr(buffer, value)) != 0)
+	char	*res;
+
+	res = ft_strstr(buffer, value);
+	if (res != 0)
 	{
 		return (res);
 	}
-
 	return (0);
 }
 
 char	*read_file(char *file_path, char *value, char *buffer)
 {
-	int 	fd;
+	int		fd;
 	char	*res;
 
 	res = 0;
@@ -45,11 +46,10 @@ char	*read_file(char *file_path, char *value, char *buffer)
 			ft_putstr(2, "Dict Error\n");
 	}
 	close(fd);
-
 	return (res);
 }
 
-char *split_word(char *str)
+char	*split_word(char *str)
 {
 	int		i;
 	char	*res;
@@ -61,13 +61,13 @@ char *split_word(char *str)
 		if (str[i] == ':')
 		{
 			i++;
-			while (str[i] && str[i] != '\n'  && str[i] == ' ')
+			while (str[i] && str[i] != '\n' && str[i] == ' ')
 				i++;
 			if (str[i] && str[i] != '\n')
 				res = &str[i];
 			while (str[i] && str[i] != '\n')
 				i++;
-			break;
+			break ;
 		}
 		i++;
 	}
@@ -84,17 +84,17 @@ void	fill_1(struct s_dict *dict, char *nbr, int len, char *tmp)
 
 	index = 0;
 	dict_arr = 0;
-	if(len == 1)
+	if (len == 1)
 	{
 		dict_arr = dict->miavor;
 		index = 0;
 	}
-	else if(len == 2 && nbr[0] == '1')
+	else if (len == 2 && nbr[0] == '1')
 	{
 		index = 1;
 		dict_arr = dict->tasnavor1;
 	}
-	else if(len == 2)
+	else if (len == 2)
 	{
 		index = 0;
 		dict_arr = dict->tasnavor;

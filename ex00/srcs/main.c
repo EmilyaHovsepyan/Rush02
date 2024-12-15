@@ -6,17 +6,17 @@
 /*   By: pamalkha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 15:12:12 by pamalkha          #+#    #+#             */
-/*   Updated: 2024/12/15 20:16:55 by pamalkha         ###   ########.fr       */
+/*   Updated: 2024/12/15 20:38:08 by arvardan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-int ft_is_number(char *str)
+int	ft_is_number(char *str)
 {
 	while (*str)
 	{
-		if (*str < '0' || *str  > '9')
+		if (*str < '0' || *str > '9')
 			return (0);
 		str++;
 	}
@@ -37,23 +37,24 @@ void	init_dict(struct s_dict *dict)
 		i++;
 	}
 }
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
-	struct s_dict dict;
+	struct s_dict	dict;
+
 	init_dict(&dict);
-		
 	if (argc == 2)
 	{
 		if (!ft_is_number(argv[1]))
 		{
-			ft_putstr(2,"Error\n");
+			ft_putstr(2, "Error\n");
 			return (1);
 		}
 		fill_dict(&dict, "srcs/numbers.dict");
 		print_number(&dict, argv[1]);
 		ft_putstr(1, "\n");
 	}
-	else if(argc == 3)
+	else if (argc == 3)
 	{
 		fill_dict(&dict, argv[2]);
 		print_number(&dict, argv[1]);
@@ -61,8 +62,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		ft_putstr(2,"Error! Number of arguments is incorrect\n");
+		ft_putstr(2, "Error! Number of arguments is incorrect\n");
 		return (1);
 	}
-	
 }
