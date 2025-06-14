@@ -20,6 +20,9 @@ This implementation supports both:
 
 #### English
 
-```bash
-./rush02 123
+Example for `rush02(123)`:
+
+```
+one hundred twenty-three
+```
 
